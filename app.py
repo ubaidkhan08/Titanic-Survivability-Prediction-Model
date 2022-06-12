@@ -36,7 +36,7 @@ def main():
 
 
     st.subheader('Choose Passenger Class')
-    C = st.radio(('P-class','1st','2nd','3rd'))
+    C = st.radio('P-class',options=('1st','2nd','3rd'))
 
     if C == '1st':
         Pc = 1
@@ -49,7 +49,7 @@ def main():
 
     
     st.subheader('Choose Port of Boarding the Titanic')
-    E = st.selectbox(('Embarkment','Cherbourg', 'Queenstown', 'Southampton'))
+    E = st.selectbox('Embarkment' ,options=('Cherbourg', 'Queenstown', 'Southampton'))
     if E == 'Cherbourg':
         EMB = 1
 
@@ -61,11 +61,11 @@ def main():
 
 
     st.subheader('No. of Siblings/Spouses Aboard the Ship')
-    SibSp = st.number_input()
+    SibSp = st.number_input(' ')
 
 
     st.subheader('No. of Parents/Children Aboard the Ship')
-    Parch = st.number_input()
+    Parch = st.number_input(' ')
 
 
     if st.button('Predict My Chances'):
