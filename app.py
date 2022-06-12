@@ -12,7 +12,7 @@ def main():
     """
 
     st.subheader('Enter Your Age')
-    AGE = st.number_input()
+    AGE = st.number_input('Age')
 
 
     st.subheader('Enter Your Ticket Price in $')
