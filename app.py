@@ -67,12 +67,7 @@ def main():
     st.subheader('No. of Parents/Children Aboard the Ship')
     Parch = st.number_input('Parents or Children')
 
-
-    if st.button('Predict My Chances'):
-        output= classify(gre,tofel,sepal_length, sepal_width, petal_length, petal_width,research)
-        st.success('Your chance of admission is: {}%'.format(output))
-
-
+    
     if st.button('Predict My Chances'):
         output= classify(Pc,SEX,AGE,SibSp,Parch,FARE,EMB)
         st.success()
