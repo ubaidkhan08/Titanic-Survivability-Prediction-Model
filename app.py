@@ -20,7 +20,7 @@ def main():
 
 
     st.subheader('Choose Your Gender')
-    S = st.radio(('Gender', 'Female','Male','Transgenger','Prefer not to say'))
+    S = st.radio('Gender', options=('Female','Male','Transgenger','Prefer not to say'))
     if S == 'Female':
         SEX = 1
 
