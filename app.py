@@ -70,8 +70,8 @@ def main():
     
     if st.button('Predict My Chances'):
         output= classify(Pc,SEX,AGE,SibSp,Parch,FARE,EMB)
-        st.success()
-        #st.success('Your chance of admission is: {}%'.format(output))
+        #st.success()
+        st.success(output)
 
         
 def classify(Pc,SEX,AGE,SibSp,Parch,FARE,EMB):
