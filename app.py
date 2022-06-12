@@ -61,11 +61,11 @@ def main():
 
 
     st.subheader('No. of Siblings/Spouses Aboard the Ship')
-    SibSp = st.number_input(' ')
+    SibSp = st.number_input('Siblings or Spouses')
 
 
     st.subheader('No. of Parents/Children Aboard the Ship')
-    Parch = st.number_input(' ')
+    Parch = st.number_input('Parents or Children')
 
 
     if st.button('Predict My Chances'):
