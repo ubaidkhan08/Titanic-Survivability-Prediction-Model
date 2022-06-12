@@ -16,7 +16,7 @@ def main():
 
 
     st.subheader('Enter Your Ticket Price in $')
-    FARE = st.slider(0, 520)
+    FARE = st.slider('Fare', 0.0, 520.0)
 
 
     st.subheader('Choose Your Gender')
