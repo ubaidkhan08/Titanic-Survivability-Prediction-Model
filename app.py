@@ -3,7 +3,6 @@ from joblib import dump, load
 import numpy as np
 import pandas as pd
 
-#log_model = load('university_admission.joblib')
 
 def main():
     st.title("Titanic Passenger Survival Prediction Model")
@@ -74,23 +73,29 @@ def main():
         st.success('Your chance of admission is: {}%'.format(output))
 
 
+    if st.button('Predict My Chances'):
+        output= classify(Pc,SEX,AGE,SibSp,Parch,FARE,EMB)
+        st.success()
+        #st.success('Your chance of admission is: {}%'.format(output))
 
-def classify(AGE,FARE,SEX,Pc,EMB,SibSp,Parch):
-    inputs=np.array([[AGE,FARE,SEX,Pc,EMB,SibSp,Parch]]).reshape(1,-1)
+        
+def classify(Pc,SEX,AGE,SibSp,Parch,FARE,EMB):
+    from sklearn.preprocessing import StandardScaler
+    scaler = StandardScaler()
+
+    inputs = [[Pc,SEX,AGE,SibSp,Parch,FARE,EMB]]
+
+    from joblib import dump, load
+    log_model = load('AdaBoost.joblib')
+    predictionn = log_model.predict(scaler.transform(inputs))
+    
+    if predictionn[0] == 1:
+        return('YAY! YOU SURVIVED!')
+
+    if predictionn[0] == 0:
+        return('Oops, you died.')
 
 
-    XX.iloc[0] = [inputs]
-    XX = scalerrr.fit_transform(XX)
-    log_model.predict([XX[0]])
-
-    log_model = load('university_admission.joblib')
-    predictionn=log_model.predict([XX[0]])
-    predd = '{}'.format(predictionn)
-    return(float(predd[1:7])*100)
-
-    #predictionn=log_model.predict(inputs)
-    #predd = '{}'.format(predictionn)
-    #return(float(predd[1:8])*100)
 
 
 if __name__=='__main__':
