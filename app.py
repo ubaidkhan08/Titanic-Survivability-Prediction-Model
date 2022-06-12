@@ -20,7 +20,7 @@ def main():
 
 
     st.subheader('Choose Your Gender')
-    S = st.radio(('Female','Male','Transgenger','Prefer not to say'))
+    S = st.radio(('Gender', 'Female','Male','Transgenger','Prefer not to say'))
     if S == 'Female':
         SEX = 1
 
@@ -28,15 +28,15 @@ def main():
         SEX = 0
 
     elif S == 'Transgenger':
-        SEX = 1.5
+        SEX = 0.5
 
     elif S == 'Prefer not to say':
-        SEX = 1.5
+        SEX = 0.5
 
 
 
     st.subheader('Choose Passenger Class')
-    C = st.radio(('1st','2nd','3rd'))
+    C = st.radio(('P-class','1st','2nd','3rd'))
 
     if C == '1st':
         Pc = 1
@@ -49,7 +49,7 @@ def main():
 
     
     st.subheader('Choose Port of Boarding the Titanic')
-    E = st.selectbox(('Cherbourg', 'Queenstown', 'Southampton'))
+    E = st.selectbox(('Embarkment','Cherbourg', 'Queenstown', 'Southampton'))
     if E == 'Cherbourg':
         EMB = 1
 
