@@ -81,8 +81,8 @@ def classify(Pc,SEX,AGE,SibSp,Parch,FARE,EMB):
     inputs = [[Pc,SEX,AGE,SibSp,Parch,FARE,EMB]]
 
     from joblib import dump, load
-    log_model = load('AdaBoost.joblib')
-    predictionn = log_model.predict(scaler.transform(inputs))
+    log_model = load('AdaBoost_unscaled.joblib')
+    predictionn = log_model.predict(inputs)
     
     if predictionn[0] == 1:
         return('YAY! YOU SURVIVED!')
